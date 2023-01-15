@@ -9,11 +9,11 @@ class Employee(models.Model):
     Represents employees
     """
     class Meta:
-        verbose_name = "نمایه کارمند"
-        verbose_name_plural = "نمایه کارمندان"
+        verbose_name = "کارمند"
+        verbose_name_plural = "کارمندان"
 
     user = models.OneToOneField(User, on_delete=models.CASCADE, verbose_name='نمایه کارمند')
-    # fields that are stored in User: first_name, last_name, email, date_joined
+    # fields that are stored in User: user_name, password, email, date_joined
 
     ncode = models.CharField('کدملی', max_length=11)
     name = models.CharField('نام', max_length=20)
@@ -43,3 +43,6 @@ class Customer(models.Model):
     lname = models.CharField('نام خانوادگی', max_length=20)
     email = models.EmailField('ایمیل', null=True, blank=True)
     address = models.TextField('آدرس', null=True, blank=True)
+
+    def __str__(self):
+        return '{} {}'.format(self.name, self.lname)
