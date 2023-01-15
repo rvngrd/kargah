@@ -7,9 +7,9 @@ from .models import Employee, Customer
 
 @admin.register(Employee)
 class RequestDemoAdmin(admin.ModelAdmin):
-    list_display = ('ncode', 'name', 'lname', 'rank')
+    list_display = ('id', 'name', 'lname', 'rank', 'ncode')
 
 
 @admin.register(Customer)
 class RequestDemoAdmin(admin.ModelAdmin):
-    list_display = ('ncode', 'name', 'lname', 'email', 'address')
+    list_display = ('id', 'name', 'lname', 'ncode', 'email', 'address')

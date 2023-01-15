@@ -27,7 +27,7 @@ class Employee(models.Model):
     rank = models.IntegerField('سمت', choices=RANK_CHOICES)
 
     def __str__(self):
-        return User.get_full_name()
+        return self.user.get_full_name()
 
 
 class Customer(models.Model):
