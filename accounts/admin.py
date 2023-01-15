@@ -6,7 +6,7 @@ from .models import Employee, Customer
 
 
 @admin.register(Employee)
-class RequestDemoAdmin(admin.ModelAdmin):
+class EmployeeAdmin(admin.ModelAdmin):
     list_display = ('id', 'name', 'lname', 'rank', 'ncode')
     list_filter = [
          'rank'
@@ -17,7 +17,7 @@ class RequestDemoAdmin(admin.ModelAdmin):
 
 
 @admin.register(Customer)
-class RequestDemoAdmin(admin.ModelAdmin):
+class CustomerAdmin(admin.ModelAdmin):
     list_display = ('id', 'name', 'lname', 'ncode', 'email', 'address')
     search_fields = (
         'id', 'ncode'
