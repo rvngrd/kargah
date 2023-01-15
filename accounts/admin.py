@@ -19,3 +19,6 @@ class RequestDemoAdmin(admin.ModelAdmin):
 @admin.register(Customer)
 class RequestDemoAdmin(admin.ModelAdmin):
     list_display = ('id', 'name', 'lname', 'ncode', 'email', 'address')
+    search_fields = (
+        'id', 'ncode'
+    )
