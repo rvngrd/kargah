@@ -16,13 +16,18 @@ class Employee(models.Model):
     # fields that are stored in User: first_name, last_name, email, date_joined
 
     ncode = models.CharField('کدملی', max_length=11)
+    name = models.CharField('نام', max_length=20)
+    lname = models.CharField('نام خانوادگی', max_length=20)
     MANAGER = 1
     NOT_MANAGER = 2
-    RANK_CHOICES = {
-        'MANAGER': 'مدیر فروش',
-        'NOT_MANAGER': 'کارمند فروش'
-    }
+    RANK_CHOICES = (
+        (MANAGER, 'مدیر فروش'),
+        (NOT_MANAGER, 'کارمند فروش')
+    )
     rank = models.IntegerField('سمت', choices=RANK_CHOICES)
+
+    def __str__(self):
+        return User.get_full_name()
 
 
 class Customer(models.Model):
