@@ -12,7 +12,7 @@ class RequestDemoAdmin(admin.ModelAdmin):
          'rank'
     ]
     search_fields = (
-        'id',
+        'id', 'ncode'
     )
 
 
