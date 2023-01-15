@@ -8,6 +8,12 @@ from .models import Employee, Customer
 @admin.register(Employee)
 class RequestDemoAdmin(admin.ModelAdmin):
     list_display = ('id', 'name', 'lname', 'rank', 'ncode')
+    list_filter = [
+         'rank'
+    ]
+    search_fields = (
+        'id',
+    )
 
 
 @admin.register(Customer)
