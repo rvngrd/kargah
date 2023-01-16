@@ -12,7 +12,7 @@ class Employee(models.Model):
         verbose_name = "کارمند"
         verbose_name_plural = "کارمندان"
 
-    user = models.OneToOneField(User, on_delete=models.CASCADE, verbose_name='نمایه کارمند')
+    user = models.OneToOneField(User, on_delete=models.CASCADE, verbose_name='کاربر')
     # fields that are stored in User: user_name, password, email, date_joined
 
     ncode = models.CharField('کدملی', max_length=11)
