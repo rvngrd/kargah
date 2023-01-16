@@ -7,7 +7,7 @@ from .models import Employee, Customer
 
 @admin.register(Employee)
 class EmployeeAdmin(admin.ModelAdmin):
-    list_display = ('id', 'name', 'lname', 'rank', 'ncode', 'emp_name')
+    list_display = ('id', 'name', 'lname', 'rank', 'ncode', 'username')
     list_filter = [
          'rank'
     ]
@@ -15,8 +15,10 @@ class EmployeeAdmin(admin.ModelAdmin):
         'id', 'ncode'
     )
 
-    def emp_name(self, obj):
-        return obj.user.first_name + obj.user.last_name
+    def username(self, obj):
+        return obj.user.username
+
+# obj.user.first_name + ' ' + obj.user.last_name
 
 
 @admin.register(Customer)
