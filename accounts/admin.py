@@ -7,13 +7,16 @@ from .models import Employee, Customer
 
 @admin.register(Employee)
 class EmployeeAdmin(admin.ModelAdmin):
-    list_display = ('id', 'name', 'lname', 'rank', 'ncode')
+    list_display = ('id', 'name', 'lname', 'rank', 'ncode', 'emp_name')
     list_filter = [
          'rank'
     ]
     search_fields = (
         'id', 'ncode'
     )
+
+    def emp_name(self, obj):
+        return obj.user.first_name + obj.user.last_name
 
 
 @admin.register(Customer)
