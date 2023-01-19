@@ -3,6 +3,8 @@ from django_jalali.admin.filters import JDateFieldListFilter
 from .models import CustomerBuy, Product, BuyItem
 # Register your models here.
 
+import django_jalali.admin as jadmin
+
 
 class ItemInline(admin.TabularInline):
     model = BuyItem
