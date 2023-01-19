@@ -5,6 +5,9 @@ from django_jalali.db import models as jmodels
 
 
 class CustomerBuy(models.Model):
+    class Meta:
+        verbose_name = "خرید مشتری"
+        verbose_name_plural = "خرید مشتری"
     objects = jmodels.jManager()
     employee = models.ForeignKey('accounts.Employee', on_delete=models.PROTECT, verbose_name='کارمند')
     customer = models.ForeignKey('accounts.Customer', on_delete=models.PROTECT, verbose_name='مشتری')
@@ -34,6 +37,9 @@ class Product(models.Model):
 
 
 class BuyItem(models.Model):
+    class Meta:
+        verbose_name = "ردیف خرید"
+        verbose_name_plural = "ردیف خرید"
     customerbuy = models.ForeignKey('CustomerBuy', on_delete=models.PROTECT, verbose_name='آیدی خرید')
     product = models.ForeignKey('Product', on_delete=models.PROTECT, verbose_name='محصول')
     quantity = models.IntegerField('تعداد')
