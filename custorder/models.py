@@ -8,7 +8,7 @@ class CustomerBuy(models.Model):
     objects = jmodels.jManager()
     employee = models.ForeignKey('accounts.Employee', on_delete=models.PROTECT, verbose_name='کارمند')
     customer = models.ForeignKey('accounts.Customer', on_delete=models.PROTECT, verbose_name='مشتری')
-    datetime = jmodels.jDateTimeField()
+    datetime = jmodels.jDateTimeField('تاریخ')
     description = models.TextField('توضیحات', blank=True, null=True)
 
     def __str__(self):
