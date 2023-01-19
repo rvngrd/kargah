@@ -19,6 +19,9 @@ class CustomerBuy(models.Model):
 
 
 class Product(models.Model):
+    class Meta:
+        verbose_name = "محصول"
+        verbose_name_plural = "محصول"
     objects = jmodels.jManager()
     ROGHAN = 1
     ZAFERAN = 2
