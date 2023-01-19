@@ -1,12 +1,13 @@
 from django.db import models
+
 from django_jalali.db import models as jmodels
 # Create your models here.
 
 
 class CustomerBuy(models.Model):
     objects = jmodels.jManager()
-    employee = models.ForeignKey('Employee', on_delete=models.PROTECT, verbose_name='کارمند')
-    customer = models.ForeignKey('Customer', on_delete=models.PROTECT, verbose_name='مشتری')
+    employee = models.ForeignKey('accounts.Employee', on_delete=models.PROTECT, verbose_name='کارمند')
+    customer = models.ForeignKey('accounts.Customer', on_delete=models.PROTECT, verbose_name='مشتری')
     datetime = jmodels.jDateTimeField()
     description = models.TextField('توضیحات', blank=True, null=True)
 
