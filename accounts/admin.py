@@ -7,7 +7,7 @@ from .models import Employee, Customer
 
 @admin.register(Employee)
 class EmployeeAdmin(admin.ModelAdmin):
-    list_display = ('id', 'name', 'lname', 'rank', 'ncode', 'user')
+    list_display = ['id', 'name', 'lname', 'rank', 'ncode', 'user']
     list_filter = [
          'rank'
     ]
