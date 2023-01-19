@@ -3,4 +3,5 @@ from django.apps import AppConfig
 
 class CustorderConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'ثبت سفارش مشتری'
+    name = 'custorder'
+    verbose_name = 'ثبت سفارش مشتری'
