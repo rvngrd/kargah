@@ -6,8 +6,8 @@ from django_jalali.db import models as jmodels
 
 class CustomerBuy(models.Model):
     class Meta:
-        verbose_name = "خرید مشتری"
-        verbose_name_plural = "خرید مشتری"
+        verbose_name = "ثبت سفارش"
+        verbose_name_plural = "ثبت سفارش"
     objects = jmodels.jManager()
     employee = models.ForeignKey('accounts.Employee', on_delete=models.PROTECT, verbose_name='کارمند')
     customer = models.ForeignKey('accounts.Customer', on_delete=models.PROTECT, verbose_name='مشتری')
@@ -21,7 +21,7 @@ class CustomerBuy(models.Model):
 class Product(models.Model):
     class Meta:
         verbose_name = "محصول"
-        verbose_name_plural = "محصول"
+        verbose_name_plural = "محصولات"
     objects = jmodels.jManager()
     ROGHAN = 1
     ZAFERAN = 2
