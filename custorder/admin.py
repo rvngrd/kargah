@@ -17,6 +17,7 @@ class Admin(admin.ModelAdmin):
     list_display = ['id', 'employee', 'customer', 'datetime', 'description']
     list_filter = [
          ('datetime', JDateFieldListFilter),
+         'employee'
     ]
     search_fields = (
         'id',
