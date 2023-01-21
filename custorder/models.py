@@ -36,7 +36,7 @@ class Product(models.Model):
     exp_date = jmodels.jDateField('تاریخ انقضا')
 
     def __str__(self):
-        return '{} - {} - {}'.format(self.type, self.weight, self.product_serie)
+        return '{} - {} گرم -سری ساخت {}'.format(self.get_type_display(), self.weight, self.product_serie)
 
 
 class BuyItem(models.Model):
