@@ -15,7 +15,7 @@ class CustomerBuy(models.Model):
     description = models.TextField('توضیحات', blank=True, null=True)
 
     def __str__(self):
-        return '{} - {} - {}'.format(self.employee, self.customer, self.datetime)
+        return 'شماره خرید {}'.format(self.id)
 
 
 class Product(models.Model):
