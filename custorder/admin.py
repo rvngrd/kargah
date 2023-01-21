@@ -27,3 +27,12 @@ class Admin(admin.ModelAdmin):
         # associating the current logged-in user to the employee
         obj.employee = request.user.employee
         super().save_model(request, obj, form, change)
+
+
+@admin.register(Product)
+class Admin(admin.ModelAdmin):
+    list_display = ['id', 'type', 'weight', 'product_serie']
+    list_filter = ['type', ]
+    search_fields = (
+        'id',
+    )
