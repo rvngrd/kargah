@@ -13,6 +13,7 @@ class ItemInline(admin.TabularInline):
 @admin.register(CustomerBuy)
 class Admin(admin.ModelAdmin):
     inlines = [ItemInline]
+    exclude = ['employee', ]
     list_display = ['id', 'employee', 'customer', 'datetime', 'description']
     list_filter = [
          ('datetime', JDateFieldListFilter),
@@ -20,3 +21,8 @@ class Admin(admin.ModelAdmin):
     search_fields = (
         'id',
     )
+
+    def save_model(self, request, obj, form, change):
+        # associating the current logged-in user to the employee
+        obj.employee = request.user.employee
+        super().save_model(request, obj, form, change)
