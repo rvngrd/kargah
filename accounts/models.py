@@ -46,3 +46,34 @@ class Customer(models.Model):
 
     def __str__(self):
         return '{} {}'.format(self.name, self.lname)
+
+
+class EmployeePhone(models.Model):
+    """
+    Represents Employees phone number
+    """
+    class Meta:
+        verbose_name = 'شماره تماس کارمند'
+        verbose_name_plural = 'شماره تماس کارمندان'
+
+    employee = models.ForeignKey('Employee', on_delete=models.PROTECT, verbose_name='کارمند')
+    phone = models.CharField('شماره تماس', max_length=11)
+
+    def __str__(self):
+        return '{} - {}'.format(self.employee, self.phone)
+
+
+class CustomerPhone(models.Model):
+    """
+    Represents Customers phone number
+    """
+
+    class Meta:
+        verbose_name = 'شماره تماس مشتری'
+        verbose_name_plural = 'شماره تماس مشتریان'
+
+    customer = models.ForeignKey('Employee', on_delete=models.PROTECT, verbose_name='کارمند')
+    phone = models.CharField('شماره تماس', max_length=11)
+
+    def __str__(self):
+        return '{} - {}'.format(self.customer, self.phone)
