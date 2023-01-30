@@ -54,7 +54,7 @@ class EmployeePhone(models.Model):
     """
     class Meta:
         verbose_name = 'شماره تماس کارمند'
-        verbose_name_plural = 'شماره تماس کارمندان'
+        verbose_name_plural = 'شماره تماس کارمند'
 
     employee = models.ForeignKey('Employee', on_delete=models.PROTECT, verbose_name='کارمند')
     phone = models.CharField('شماره تماس', max_length=11)
@@ -70,7 +70,7 @@ class CustomerPhone(models.Model):
 
     class Meta:
         verbose_name = 'شماره تماس مشتری'
-        verbose_name_plural = 'شماره تماس مشتریان'
+        verbose_name_plural = 'شماره تماس مشتری'
 
     customer = models.ForeignKey('Customer', on_delete=models.PROTECT, verbose_name='کارمند')
     phone = models.CharField('شماره تماس', max_length=11)
