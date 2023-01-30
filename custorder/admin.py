@@ -11,7 +11,7 @@ class ItemInline(admin.TabularInline):
 
 
 @admin.register(CustomerBuy)
-class Admin(admin.ModelAdmin):
+class CustBuyAdmin(admin.ModelAdmin):
     inlines = [ItemInline]
     exclude = ['employee', ]
     list_display = ['id', 'employee', 'customer', 'datetime', 'description']
@@ -30,7 +30,7 @@ class Admin(admin.ModelAdmin):
 
 
 @admin.register(Product)
-class Admin(admin.ModelAdmin):
+class ProdAdmin(admin.ModelAdmin):
     list_display = ['id', 'type', 'weight', 'product_serie']
     list_filter = ['type', 'product_serie']
     search_fields = (
