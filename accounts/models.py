@@ -72,7 +72,7 @@ class CustomerPhone(models.Model):
         verbose_name = 'شماره تماس مشتری'
         verbose_name_plural = 'شماره تماس مشتریان'
 
-    customer = models.ForeignKey('Employee', on_delete=models.PROTECT, verbose_name='کارمند')
+    customer = models.ForeignKey('Customer', on_delete=models.PROTECT, verbose_name='کارمند')
     phone = models.CharField('شماره تماس', max_length=11)
 
     def __str__(self):
