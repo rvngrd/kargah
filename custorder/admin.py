@@ -32,7 +32,7 @@ class Admin(admin.ModelAdmin):
 @admin.register(Product)
 class Admin(admin.ModelAdmin):
     list_display = ['id', 'type', 'weight', 'product_serie']
-    list_filter = ['type', ]
+    list_filter = ['type', 'product_serie']
     search_fields = (
         'id',
     )
