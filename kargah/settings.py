@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'accounts.apps.AccountsConfig',
     'custorder.apps.CustorderConfig',
+    'prodorder.apps.ProdorderConfig',
     'django_jalali'
 ]
 
