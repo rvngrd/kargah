@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'accounts.apps.AccountsConfig',
     'custorder.apps.CustorderConfig',
     'prodorder.apps.ProdorderConfig',
+    'buyraw.apps.BuyrawConfig',
     'django_jalali'
 ]
 
