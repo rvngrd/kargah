@@ -4,7 +4,7 @@ from django_jalali.db import models as jmodels
 
 class BuyRawMaterial(models.Model):
     class Meta:
-        verbose_name = "خرید ماده اولیه"
+        verbose_name = "ثبت خرید ماده اولیه"
         verbose_name_plural = "ثبت خرید ماده اولیه"
     objects = jmodels.jManager()
     employee = models.ForeignKey('accounts.Employee', on_delete=models.PROTECT, verbose_name='کارمند')
